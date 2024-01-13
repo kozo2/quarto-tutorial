@@ -1,7 +1,36 @@
 ---
-title: "Mysite"
+title: "Quarto 超入門"
 ---
 
-This is a Quarto website.
+## はじめての Quarto
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+### Quarto とは
+
+Quarto は、R Markdown と Pandoc をベースにした、論文やレポート、書籍などの文書を作成するためのツールです。
+
+### Quarto のインストール
+
+Quarto は quarto.org からダウンロードできます。
+
+### プロジェクトの作成
+
+`quarto create project` コマンドを使って、Quarto プロジェクトを作成します。
+
+```default
+PS C:\Users\kozo2> quarto create project website mysite
+Creating project at C:\Users\kozo2\mysite:
+  - Created _quarto.yml
+  - Created index.qmd
+  - Created about.qmd
+  - Created styles.css
+ ? Open With » (don't open)
+PS C:\Users\kozo2>
+```
+
+### プロジェクトのビルドとプレビュー
+
+`quarto preview` コマンドを使って、プロジェクトをビルドしてプレビューします。
+
+```default
+quarto preview mysite
+```
