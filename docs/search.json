@@ -2,15 +2,36 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Mysite",
+    "title": "Quarto 超入門",
     "section": "",
-    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites."
+    "text": "Quarto は、R Markdown と Pandoc をベースにした、論文やレポート、書籍などの文書を作成するためのツールです。\n\n\n\nQuarto は quarto.org からダウンロードできます。\n\n\n\nquarto create project コマンドを使って、Quarto プロジェクトを作成します。\nPS C:\\Users\\kozo2&gt; quarto create project website mysite\nCreating project at C:\\Users\\kozo2\\mysite:\n  - Created _quarto.yml\n  - Created index.qmd\n  - Created about.qmd\n  - Created styles.css\n ? Open With » (don't open)\nPS C:\\Users\\kozo2&gt;\n\n\n\nquarto preview コマンドを使って、プロジェクトをビルドしてプレビューします。\nquarto preview mysite"
+  },
+  {
+    "objectID": "index.html#はじめての-quarto",
+    "href": "index.html#はじめての-quarto",
+    "title": "Quarto 超入門",
+    "section": "",
+    "text": "Quarto は、R Markdown と Pandoc をベースにした、論文やレポート、書籍などの文書を作成するためのツールです。\n\n\n\nQuarto は quarto.org からダウンロードできます。\n\n\n\nquarto create project コマンドを使って、Quarto プロジェクトを作成します。\nPS C:\\Users\\kozo2&gt; quarto create project website mysite\nCreating project at C:\\Users\\kozo2\\mysite:\n  - Created _quarto.yml\n  - Created index.qmd\n  - Created about.qmd\n  - Created styles.css\n ? Open With » (don't open)\nPS C:\\Users\\kozo2&gt;\n\n\n\nquarto preview コマンドを使って、プロジェクトをビルドしてプレビューします。\nquarto preview mysite"
   },
   {
     "objectID": "about.html",
     "href": "about.html",
-    "title": "About",
+    "title": "Quarto Markdown による記述",
     "section": "",
-    "text": "About this site"
+    "text": "Quarto はデフォルトで、 Markdown による記述をサポートしています。\nQuarto はそれに加えて、 Quarto Markdown という独自の拡張を提供しています。\nQuarto Markdown には、以下のような特徴があります。"
+  },
+  {
+    "objectID": "githubpages.html",
+    "href": "githubpages.html",
+    "title": "GitHub Pages でのサイトのホスト",
+    "section": "",
+    "text": "ビルドしたサイトを GitHub Pages でホストするには、 ビルドしたサイトを GitHub のリポジトリにプッシュする必要があります。 またプッシュしたファイルをホストするための設定を GitHub で行う必要があります。"
+  },
+  {
+    "objectID": "quartomarkdown.html",
+    "href": "quartomarkdown.html",
+    "title": "Quarto Markdown による記述",
+    "section": "",
+    "text": "Quarto はデフォルトで、 Markdown による記述をサポートしています。\nQuarto はそれに加えて、 Quarto Markdown という独自の拡張を提供しています。\nQuarto Markdown には、以下のような特徴があります。"
   }
 ]

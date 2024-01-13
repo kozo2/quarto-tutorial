@@ -2,8 +2,6 @@
 title: "Quarto 超入門"
 ---
 
-This is a Quarto website.
-
 ## はじめての Quarto
 
 ### Quarto とは
@@ -18,11 +16,7 @@ Quarto は quarto.org からダウンロードできます。
 
 `quarto create project` コマンドを使って、Quarto プロジェクトを作成します。
 
-```
-quarto create project website mysite
-```
-
-```
+```default
 PS C:\Users\kozo2> quarto create project website mysite
 Creating project at C:\Users\kozo2\mysite:
   - Created _quarto.yml
@@ -37,6 +31,6 @@ PS C:\Users\kozo2>
 
 `quarto preview` コマンドを使って、プロジェクトをビルドしてプレビューします。
 
-```
+```default
 quarto preview mysite
 ```
