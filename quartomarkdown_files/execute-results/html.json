@@ -1,0 +1,12 @@
+{
+  "hash": "b91c968251eeac3a63476db05a4f2a67",
+  "result": {
+    "engine": "jupyter",
+    "markdown": "---\ntitle: \"Quarto Markdown による記述\"\nbibliography: references.bib\n---\n\nQuarto はデフォルトで、 Markdown による記述をサポートしています。\n\nQuarto はそれに加えて、 Quarto Markdown という独自の拡張を提供しています。\n\nQuarto Markdown には、以下のような特徴があります。\n\n1. 実行可能なコードブロック: R, Python, Juliaなどの言語で書かれたコードを文書内に埋め込み、そのコードを実行して結果を直接文書に表示することができます。\n2. クロスリファレンスと引用: 文書内で図表やセクションを参照し、文献引用をサポートします。\n\n\n## 実行可能なコードブロック {#sec-executable-codeblock}\n\n::: {#cell-fig-plot .cell execution_count=1}\n``` {.python .cell-code}\nimport matplotlib.pyplot as plt\nimport numpy as np\n\nx = np.linspace(0, 10, 100)\ny = np.sin(x)\n\nplt.figure(figsize=(8, 4))\nplt.plot(x, y)\nplt.title(\"Example Plot\")\nplt.show()\n```\n\n::: {.cell-output .cell-output-display}\n![An example plot.](quartomarkdown_files/figure-html/fig-plot-output-1.png){#fig-plot width=665 height=357}\n:::\n:::\n\n\n## クロスリファレンスと引用\n\nこの.qmdファイルでは、以下のことを行っています：\n\n[実行可能なコードブロック](#sec-executable-codeblock) で述べたようにうんぬんかんぬん。\n\n@fig-plot で示したようにうんぬんかんぬん。\n\n\nクロスリファレンス: 文書内のセクション（実行可能なコードブロック）と図（An example plot.）にラベルを付け、そのラベルを使用して文書内で参照しています。セクションへのリンクはマークダウンのリンク構文を使い、図へのリンクは \\@label を使用しています。\n引用: [@smith2020]を使用して、references.bibファイル内のBibTeXエントリを引用しています。\n\n",
+    "supporting": [
+      "quartomarkdown_files"
+    ],
+    "filters": [],
+    "includes": {}
+  }
+}

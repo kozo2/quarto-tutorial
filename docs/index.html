@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.542">
+<meta name="generator" content="quarto-1.4.549">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -127,12 +127,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./quartomarkdown.html"> 
-<span class="menu-text">Quarto Markdown による記述</span></a>
-  </li>  
-  <li class="nav-item">
     <a class="nav-link" href="./githubpages.html"> 
 <span class="menu-text">GitHub Pages でのサイトのホスト</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./crossref.html"> 
+<span class="menu-text">クロスリファレンスと引用</span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -156,7 +156,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#quarto-のインストール" id="toc-quarto-のインストール" class="nav-link" data-scroll-target="#quarto-のインストール">Quarto のインストール</a></li>
   <li><a href="#プロジェクトの作成" id="toc-プロジェクトの作成" class="nav-link" data-scroll-target="#プロジェクトの作成">プロジェクトの作成</a></li>
   <li><a href="#プロジェクトのビルドとプレビュー" id="toc-プロジェクトのビルドとプレビュー" class="nav-link" data-scroll-target="#プロジェクトのビルドとプレビュー">プロジェクトのビルドとプレビュー</a></li>
+  <li><a href="#quarto.yml-について" id="toc-quarto.yml-について" class="nav-link" data-scroll-target="#quarto.yml-について">_quarto.yml について</a></li>
   </ul></li>
+  <li><a href="#次は何を" id="toc-次は何を" class="nav-link" data-scroll-target="#次は何を">次は何を？</a></li>
   </ul>
 </nav>
     </div>
@@ -186,11 +188,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="はじめての-quarto">はじめての Quarto</h2>
 <section id="quarto-とは" class="level3">
 <h3 class="anchored" data-anchor-id="quarto-とは">Quarto とは</h3>
-<p>Quarto は、R Markdown と Pandoc をベースにした、論文やレポート、書籍などの文書を作成するためのツールです。</p>
+<p>Quarto は、R Markdown と Pandoc をベースにした、論文やレポート、 書籍などの文書を作成するためのツールです。</p>
 </section>
 <section id="quarto-のインストール" class="level3">
 <h3 class="anchored" data-anchor-id="quarto-のインストール">Quarto のインストール</h3>
-<p>Quarto は quarto.org からダウンロードできます。</p>
+<p>Quarto は <a href="https://quarto.org" class="uri">https://quarto.org</a> からダウンロードできます。</p>
+<p>現時点の最新バージョンは 1.4.549 です。</p>
+<p>最新バージョンの方が便利な機能があるので最新バージョンを使うことをおすすめします。</p>
 </section>
 <section id="プロジェクトの作成" class="level3">
 <h3 class="anchored" data-anchor-id="プロジェクトの作成">プロジェクトの作成</h3>
@@ -203,14 +207,65 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  - Created styles.css</span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a> ? Open With » (don't open)</span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>PS C:\Users\kozo2&gt;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><code>_quarto.yml</code>、<code>index.qmd</code>、<code>about.qmd</code>、<code>styles.css</code> というファイルが生成されました。</p>
+<p><code>.qmd</code> という拡張子のファイルの内容はほとんど Markdown です。 <code>.qmd</code> ファイルは Quarto の拡張が入っている Markdown なので qmd という名前が付いています。</p>
+<p><code>_quarto.yml</code> と <code>styles.css</code> は後で説明します。</p>
 </section>
 <section id="プロジェクトのビルドとプレビュー" class="level3">
 <h3 class="anchored" data-anchor-id="プロジェクトのビルドとプレビュー">プロジェクトのビルドとプレビュー</h3>
-<p><code>quarto preview</code> コマンドを使って、プロジェクトをビルドしてプレビューします。</p>
+<p>なにはともあれ <code>quarto preview</code> コマンドを使って、プロジェクトをビルドしてプレビューしてみます。</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>quarto preview mysite</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-
-
+<p>上記でプレビューがかかっている状態で、 <code>quarto create project website mysite</code> コマンドによって生成された <code>index.qmd</code> や <code>about.qmd</code> に適当に文字を追加してみましょう。 すると、プレビューされるウェブページにも追加された文字が反映されていることがわかります。</p>
 </section>
+<section id="quarto.yml-について" class="level3">
+<h3 class="anchored" data-anchor-id="quarto.yml-について">_quarto.yml について</h3>
+<p><code>_quarto.yml</code> ファイルはウェブサイトをどのように作るかを指定する設定ファイルです。</p>
+<p><code>quarto create project website mysite</code> コマンドで生成された <code>_quarto.yml</code> は 下記のようになっています。</p>
+<pre><code>project:
+  type: website
+
+website:
+  title: "Mysite"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - about.qmd
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true</code></pre>
+<section id="type-website-について" class="level4">
+<h4 class="anchored" data-anchor-id="type-website-について">type: website について</h4>
+<p>Quarto には website 以外のフォーマット (PDFやDOCX等) を生成する機能もあるので このように設定する項目があります。</p>
+</section>
+<section id="theme-cosmo-について" class="level4">
+<h4 class="anchored" data-anchor-id="theme-cosmo-について">theme: cosmo について</h4>
+<p>Quarto にはデフォルトで25個のテーマがあります。 <a href="https://quarto.org/docs/output-formats/html-themes.html" class="uri">https://quarto.org/docs/output-formats/html-themes.html</a> ここでは cosmo という名前のテーマが指定されています。</p>
+</section>
+<section id="css-styles.css" class="level4">
+<h4 class="anchored" data-anchor-id="css-styles.css">css: styles.css</h4>
+<p>自分でテーマをカスタマイズしたい場合 styles.css ファイルに手を加えます。</p>
+</section>
+<section id="toc-true" class="level4">
+<h4 class="anchored" data-anchor-id="toc-true">toc: true</h4>
+<p>ウェブサイトの各ページに目次を作るかどうかを指定します。</p>
+</section>
+</section>
+</section>
+<section id="次は何を" class="level2">
+<h2 class="anchored" data-anchor-id="次は何を">次は何を？</h2>
+<p><code>quarto preview mysite</code> コマンドの実行後に <code>_site</code> というフォルダが作られ、そこにビルドされたウェブサイトのファイル があることがわかります。</p>
+<p>なおこの出力フォルダ名を変更したい場合は <code>_quarto.yml</code> の <code>project:</code> 項目下で <code>output-dir:</code> を指定します。 下記の場合は <code>_site</code> ではなく <code>docs</code> にビルド結果が出力されます。</p>
+<pre><code>project:
+  type: website
+  output-dir: docs</code></pre>
+<p>次は、この <code>_site</code> を GitHub Pages に配置し、 ローカルにビルドされたウェブサイトをだれもが見れるようにします。</p>
+<p><a href="githubpages.html">GitHub Pages でのサイトのホスト</a> へと進みましょう。</p>
+
+
 </section>
 
 </main> <!-- /main -->
@@ -375,7 +430,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      return note.innerHTML;
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
     }
   }
   for (var i=0; i<xrefs.length; i++) {

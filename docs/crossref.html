@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Mysite - GitHub Pages でのサイトのホスト</title>
+<title>Mysite - クロスリファレンス</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -93,11 +93,11 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./githubpages.html" aria-current="page"> 
+    <a class="nav-link" href="./githubpages.html"> 
 <span class="menu-text">GitHub Pages でのサイトのホスト</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./crossref.html"> 
+    <a class="nav-link active" href="./crossref.html" aria-current="page"> 
 <span class="menu-text">クロスリファレンス</span></a>
   </li>  
 </ul>
@@ -112,14 +112,20 @@ ul.task-list li input[type="checkbox"] {
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#クロスリファレンスとは-その使い方" id="toc-クロスリファレンスとは-その使い方" class="nav-link active" data-scroll-target="#クロスリファレンスとは-その使い方">クロスリファレンスとは? + その使い方</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">GitHub Pages でのサイトのホスト</h1>
+<h1 class="title">クロスリファレンス</h1>
 </div>
 
 
@@ -136,57 +142,59 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>ビルドしたサイトを GitHub Pages でホストするには、 ビルドしたサイトを GitHub のリポジトリにプッシュする必要があります。 またプッシュしたファイルをホストするための設定を GitHub で行う必要があります。</p>
-<p>何はともあれ、 <a href="https://desktop.github.com/" class="uri">https://desktop.github.com/</a> を使う等して、 <a href="index.html">Quarto 超入門</a> で作った <code>mysite</code> フォルダ下のファイルを ご自身の GitHub のリポジトリに追加しましょう。</p>
-<p>それを追加した後は、下記の画像のように、そのリポジトリの設定を変更しましょう。</p>
-<p><img src="settings4pages.png" class="img-fluid"></p>
-<p>すると下記のファイルを自動生成する旨のメッセージが表示されます。 行がたくさんありますが、困惑する必要はありません。</p>
-<p>注意すべきは <code>path: 'docs'</code>の行だけです。 この行を Quarto がビルド結果を出力したフォルダ名 <code>_site</code> に 変更する、つまり <code>path: '_site'</code> に変更すれば、 GitHub Pages へのウェブサイトの配置が完了します。</p>
-<pre><code># Simple workflow for deploying static content to GitHub Pages
-name: Deploy static content to Pages
+<p>Quarto はデフォルトで、 Markdown による記述をサポートしています。</p>
+<p>Quarto はそれに加えて、 Quarto Markdown という独自の拡張を提供しています。</p>
+<p>Quarto Markdown には、以下のような利点があります。</p>
+<ol type="1">
+<li>クロスリファレンス: 文書内で図表やセクションを参照することをサポートします。</li>
+<li>実行可能なコードブロック: R, Python, Juliaなどの言語で書かれたコードを文書内に埋め込み、そのコードを実行して結果を直接文書に表示することができます。</li>
+</ol>
+<p>ここでは「クロスリファレンスと引用」の機能を紹介します。</p>
+<section id="クロスリファレンスとは-その使い方" class="level2">
+<h2 class="anchored" data-anchor-id="クロスリファレンスとは-その使い方">クロスリファレンスとは? + その使い方</h2>
+<p>クロスリファレンスを用いるには複数の Quarto Markdown の記法があるのですが、 ここではバージョン1.4から加わった下記の記法を用います。</p>
+<pre><code>::: {#fig-elephant}
 
-on:
-  # Runs on pushes targeting the default branch
-  push:
-    branches: ["main"]
+![](elephant.png)
 
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
+象さん
+:::</code></pre>
+<p>上記の記法により下記の画像がウェブサイトには表示されます。</p>
+<p>(画像ファイル <a href="https://quarto.org/docs/authoring/elephant.png" class="uri">https://quarto.org/docs/authoring/elephant.png</a> の取得が必要です。)</p>
+<div id="fig-elephant" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-elephant-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="elephant.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-elephant-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: 象さん
+</figcaption>
+</figure>
+</div>
+<p>まず、象の画像がウェブサイトに表示されているだけでなく、 閉じの <code>:::</code> の 1行上にある文字「象さん」で図のキャプションが表示されることがわかります。</p>
+<p>次に</p>
+<pre><code>@fig-elephant をご参照ください。</code></pre>
+<p>と qmd 中に書いてみます。</p>
+<p>するとウェブサイトでは</p>
+<p><a href="#fig-elephant" class="quarto-xref">Figure&nbsp;1</a> をご参照ください。</p>
+<p>と表示されます。 図のインデックス番号付けと、図へのリンクが自動的に生成されたことがわかります。 そして、これが「クロスリファレンス」と呼ばれるものになります。</p>
+<p>出版物では、図表に対する参照が多くなります。 その参照の管理を手作業で行うのは骨の折れる作業です。 この「クロスリファレンス」機能を使うとその苦労から逃れることができます。</p>
+<p>「クロスリファレンス」イコール「文書内のセクションや図や表にラベルを付け、そのラベルを使用して文書内で参照すること」と言えます。</p>
+<p>先程の</p>
+<pre><code>::: {#fig-elephant}
 
-# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
-permissions:
-  contents: read
-  pages: write
-  id-token: write
+![](elephant.png)
 
-# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
-# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
-concurrency:
-  group: "pages"
-  cancel-in-progress: false
-
-jobs:
-  # Single deploy job since we're just deploying
-  deployn:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Setup Pages
-        uses: actions/configure-pages@v4
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          # Upload `docs` repository
-          path: 'docs'
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4</code></pre>
+An Elephant
+:::</code></pre>
+<p>では</p>
+<pre><code>::: {#fig-elephant}</code></pre>
+<p>によって、<code>![](elephant.png)</code> への「ラベル付け」が行われ、</p>
+<pre><code>@fig-elephant</code></pre>
+<p>によって「文書内で参照すること」が行われたのです。</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

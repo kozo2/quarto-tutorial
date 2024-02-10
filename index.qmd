@@ -6,11 +6,16 @@ title: "Quarto 超入門"
 
 ### Quarto とは
 
-Quarto は、R Markdown と Pandoc をベースにした、論文やレポート、書籍などの文書を作成するためのツールです。
+Quarto は、R Markdown と Pandoc をベースにした、論文やレポート、
+書籍などの文書を作成するためのツールです。
 
 ### Quarto のインストール
 
-Quarto は quarto.org からダウンロードできます。
+Quarto は <https://quarto.org> からダウンロードできます。
+
+現時点の最新バージョンは 1.4.549 です。
+
+最新バージョンの方が便利な機能があるので最新バージョンを使うことをおすすめします。
 
 ### プロジェクトの作成
 
@@ -27,10 +32,91 @@ Creating project at C:\Users\kozo2\mysite:
 PS C:\Users\kozo2>
 ```
 
+`_quarto.yml`、`index.qmd`、`about.qmd`、`styles.css`
+というファイルが生成されました。
+
+`.qmd` という拡張子のファイルの内容はほとんど Markdown です。
+`.qmd` ファイルは Quarto の拡張が入っている Markdown なので
+qmd という名前が付いています。
+
+`_quarto.yml` と `styles.css` は後で説明します。
+
 ### プロジェクトのビルドとプレビュー
 
-`quarto preview` コマンドを使って、プロジェクトをビルドしてプレビューします。
+なにはともあれ
+`quarto preview` コマンドを使って、プロジェクトをビルドしてプレビューしてみます。
 
 ```default
 quarto preview mysite
 ```
+
+上記でプレビューがかかっている状態で、
+`quarto create project website mysite` コマンドによって生成された
+`index.qmd` や `about.qmd` に適当に文字を追加してみましょう。
+すると、プレビューされるウェブページにも追加された文字が反映されていることがわかります。
+
+### _quarto.yml について
+
+`_quarto.yml` ファイルはウェブサイトをどのように作るかを指定する設定ファイルです。
+
+`quarto create project website mysite` コマンドで生成された `_quarto.yml` は
+下記のようになっています。
+
+```
+project:
+  type: website
+
+website:
+  title: "Mysite"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - about.qmd
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+```
+
+#### type: website について
+
+Quarto には website 以外のフォーマット (PDFやDOCX等) を生成する機能もあるので
+このように設定する項目があります。
+
+#### theme: cosmo について
+
+Quarto にはデフォルトで25個のテーマがあります。
+<https://quarto.org/docs/output-formats/html-themes.html>
+ここでは cosmo という名前のテーマが指定されています。
+
+#### css: styles.css
+
+自分でテーマをカスタマイズしたい場合 styles.css ファイルに手を加えます。
+
+#### toc: true
+
+ウェブサイトの各ページに目次を作るかどうかを指定します。
+
+## 次は何を？
+
+`quarto preview mysite` コマンドの実行後に
+`_site` というフォルダが作られ、そこにビルドされたウェブサイトのファイル
+があることがわかります。
+
+なおこの出力フォルダ名を変更したい場合は `_quarto.yml` 
+の `project:` 項目下で `output-dir:` を指定します。
+下記の場合は `_site` ではなく `docs` にビルド結果が出力されます。
+
+```
+project:
+  type: website
+  output-dir: docs
+```
+
+次は、この `_site` を GitHub Pages に配置し、
+ローカルにビルドされたウェブサイトをだれもが見れるようにします。
+
+[GitHub Pages でのサイトのホスト](githubpages.html) へと進みましょう。

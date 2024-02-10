@@ -4,14 +4,14 @@
     "href": "index.html",
     "title": "Quarto 超入門",
     "section": "",
-    "text": "Quarto は、R Markdown と Pandoc をベースにした、論文やレポート、書籍などの文書を作成するためのツールです。\n\n\n\nQuarto は quarto.org からダウンロードできます。\n\n\n\nquarto create project コマンドを使って、Quarto プロジェクトを作成します。\nPS C:\\Users\\kozo2&gt; quarto create project website mysite\nCreating project at C:\\Users\\kozo2\\mysite:\n  - Created _quarto.yml\n  - Created index.qmd\n  - Created about.qmd\n  - Created styles.css\n ? Open With » (don't open)\nPS C:\\Users\\kozo2&gt;\n\n\n\nquarto preview コマンドを使って、プロジェクトをビルドしてプレビューします。\nquarto preview mysite"
+    "text": "Quarto は、R Markdown と Pandoc をベースにした、論文やレポート、 書籍などの文書を作成するためのツールです。\n\n\n\nQuarto は https://quarto.org からダウンロードできます。\n現時点の最新バージョンは 1.4.549 です。\n最新バージョンの方が便利な機能があるので最新バージョンを使うことをおすすめします。\n\n\n\nquarto create project コマンドを使って、Quarto プロジェクトを作成します。\nPS C:\\Users\\kozo2&gt; quarto create project website mysite\nCreating project at C:\\Users\\kozo2\\mysite:\n  - Created _quarto.yml\n  - Created index.qmd\n  - Created about.qmd\n  - Created styles.css\n ? Open With » (don't open)\nPS C:\\Users\\kozo2&gt;\n_quarto.yml、index.qmd、about.qmd、styles.css というファイルが生成されました。\n.qmd という拡張子のファイルの内容はほとんど Markdown です。 .qmd ファイルは Quarto の拡張が入っている Markdown なので qmd という名前が付いています。\n_quarto.yml と styles.css は後で説明します。\n\n\n\nなにはともあれ quarto preview コマンドを使って、プロジェクトをビルドしてプレビューしてみます。\nquarto preview mysite\n上記でプレビューがかかっている状態で、 quarto create project website mysite コマンドによって生成された index.qmd や about.qmd に適当に文字を追加してみましょう。 すると、プレビューされるウェブページにも追加された文字が反映されていることがわかります。\n\n\n\n_quarto.yml ファイルはウェブサイトをどのように作るかを指定する設定ファイルです。\nquarto create project website mysite コマンドで生成された _quarto.yml は 下記のようになっています。\nproject:\n  type: website\n\nwebsite:\n  title: \"Mysite\"\n  navbar:\n    left:\n      - href: index.qmd\n        text: Home\n      - about.qmd\n\nformat:\n  html:\n    theme: cosmo\n    css: styles.css\n    toc: true\n\n\nQuarto には website 以外のフォーマット (PDFやDOCX等) を生成する機能もあるので このように設定する項目があります。\n\n\n\nQuarto にはデフォルトで25個のテーマがあります。 https://quarto.org/docs/output-formats/html-themes.html ここでは cosmo という名前のテーマが指定されています。\n\n\n\n自分でテーマをカスタマイズしたい場合 styles.css ファイルに手を加えます。\n\n\n\nウェブサイトの各ページに目次を作るかどうかを指定します。"
   },
   {
     "objectID": "index.html#はじめての-quarto",
     "href": "index.html#はじめての-quarto",
     "title": "Quarto 超入門",
     "section": "",
-    "text": "Quarto は、R Markdown と Pandoc をベースにした、論文やレポート、書籍などの文書を作成するためのツールです。\n\n\n\nQuarto は quarto.org からダウンロードできます。\n\n\n\nquarto create project コマンドを使って、Quarto プロジェクトを作成します。\nPS C:\\Users\\kozo2&gt; quarto create project website mysite\nCreating project at C:\\Users\\kozo2\\mysite:\n  - Created _quarto.yml\n  - Created index.qmd\n  - Created about.qmd\n  - Created styles.css\n ? Open With » (don't open)\nPS C:\\Users\\kozo2&gt;\n\n\n\nquarto preview コマンドを使って、プロジェクトをビルドしてプレビューします。\nquarto preview mysite"
+    "text": "Quarto は、R Markdown と Pandoc をベースにした、論文やレポート、 書籍などの文書を作成するためのツールです。\n\n\n\nQuarto は https://quarto.org からダウンロードできます。\n現時点の最新バージョンは 1.4.549 です。\n最新バージョンの方が便利な機能があるので最新バージョンを使うことをおすすめします。\n\n\n\nquarto create project コマンドを使って、Quarto プロジェクトを作成します。\nPS C:\\Users\\kozo2&gt; quarto create project website mysite\nCreating project at C:\\Users\\kozo2\\mysite:\n  - Created _quarto.yml\n  - Created index.qmd\n  - Created about.qmd\n  - Created styles.css\n ? Open With » (don't open)\nPS C:\\Users\\kozo2&gt;\n_quarto.yml、index.qmd、about.qmd、styles.css というファイルが生成されました。\n.qmd という拡張子のファイルの内容はほとんど Markdown です。 .qmd ファイルは Quarto の拡張が入っている Markdown なので qmd という名前が付いています。\n_quarto.yml と styles.css は後で説明します。\n\n\n\nなにはともあれ quarto preview コマンドを使って、プロジェクトをビルドしてプレビューしてみます。\nquarto preview mysite\n上記でプレビューがかかっている状態で、 quarto create project website mysite コマンドによって生成された index.qmd や about.qmd に適当に文字を追加してみましょう。 すると、プレビューされるウェブページにも追加された文字が反映されていることがわかります。\n\n\n\n_quarto.yml ファイルはウェブサイトをどのように作るかを指定する設定ファイルです。\nquarto create project website mysite コマンドで生成された _quarto.yml は 下記のようになっています。\nproject:\n  type: website\n\nwebsite:\n  title: \"Mysite\"\n  navbar:\n    left:\n      - href: index.qmd\n        text: Home\n      - about.qmd\n\nformat:\n  html:\n    theme: cosmo\n    css: styles.css\n    toc: true\n\n\nQuarto には website 以外のフォーマット (PDFやDOCX等) を生成する機能もあるので このように設定する項目があります。\n\n\n\nQuarto にはデフォルトで25個のテーマがあります。 https://quarto.org/docs/output-formats/html-themes.html ここでは cosmo という名前のテーマが指定されています。\n\n\n\n自分でテーマをカスタマイズしたい場合 styles.css ファイルに手を加えます。\n\n\n\nウェブサイトの各ページに目次を作るかどうかを指定します。"
   },
   {
     "objectID": "about.html",
@@ -25,13 +25,90 @@
     "href": "githubpages.html",
     "title": "GitHub Pages でのサイトのホスト",
     "section": "",
-    "text": "ビルドしたサイトを GitHub Pages でホストするには、 ビルドしたサイトを GitHub のリポジトリにプッシュする必要があります。 またプッシュしたファイルをホストするための設定を GitHub で行う必要があります。"
+    "text": "ビルドしたサイトを GitHub Pages でホストするには、 ビルドしたサイトを GitHub のリポジトリにプッシュする必要があります。 またプッシュしたファイルをホストするための設定を GitHub で行う必要があります。\n何はともあれ、 https://desktop.github.com/ を使う等して、 Quarto 超入門 で作った mysite フォルダ下のファイルを ご自身の GitHub のリポジトリに追加しましょう。\nそれを追加した後は、下記の画像のように、そのリポジトリの設定を変更しましょう。\n\nすると下記のファイルを自動生成する旨のメッセージが表示されます。 行がたくさんありますが、困惑する必要はありません。\n注意すべきは path: 'docs'の行だけです。 この行を Quarto がビルド結果を出力したフォルダ名 _site に 変更する、つまり path: '_site' に変更すれば、 GitHub Pages へのウェブサイトの配置が完了します。\n# Simple workflow for deploying static content to GitHub Pages\nname: Deploy static content to Pages\n\non:\n  # Runs on pushes targeting the default branch\n  push:\n    branches: [\"main\"]\n\n  # Allows you to run this workflow manually from the Actions tab\n  workflow_dispatch:\n\n# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages\npermissions:\n  contents: read\n  pages: write\n  id-token: write\n\n# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.\n# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.\nconcurrency:\n  group: \"pages\"\n  cancel-in-progress: false\n\njobs:\n  # Single deploy job since we're just deploying\n  deployn:\n    environment:\n      name: github-pages\n      url: ${{ steps.deployment.outputs.page_url }}\n    runs-on: ubuntu-latest\n    steps:\n      - name: Checkout\n        uses: actions/checkout@v4\n      - name: Setup Pages\n        uses: actions/configure-pages@v4\n      - name: Upload artifact\n        uses: actions/upload-pages-artifact@v3\n        with:\n          # Upload `docs` repository\n          path: 'docs'\n      - name: Deploy to GitHub Pages\n        id: deployment\n        uses: actions/deploy-pages@v4"
   },
   {
     "objectID": "quartomarkdown.html",
     "href": "quartomarkdown.html",
-    "title": "Quarto Markdown による記述",
+    "title": "Quarto Markdown の利点",
     "section": "",
-    "text": "Quarto はデフォルトで、 Markdown による記述をサポートしています。\nQuarto はそれに加えて、 Quarto Markdown という独自の拡張を提供しています。\nQuarto Markdown には、以下のような特徴があります。"
+    "text": "Quarto はデフォルトで、 Markdown による記述をサポートしています。\nQuarto はそれに加えて、 Quarto Markdown という独自の拡張を提供しています。\nQuarto Markdown には、以下のような利点があります。"
+  },
+  {
+    "objectID": "quartomarkdown.html#実行可能なコードブロック",
+    "href": "quartomarkdown.html#実行可能なコードブロック",
+    "title": "Quarto Markdown による記述",
+    "section": "実行可能なコードブロック",
+    "text": "実行可能なコードブロック\n\nimport matplotlib.pyplot as plt\nimport numpy as np\n\n# Generate some data\nx = np.linspace(0, 10, 100)\ny = np.sin(x)\n\n# Create the plot\nplt.figure(figsize=(10, 6))\nplt.plot(x, y, '-r', label='sin(x)')\nplt.title('Sin(x) Plot')\nplt.xlabel('X')\nplt.ylabel('Y')\nplt.legend(loc='upper right')\nplt.grid(True)\n\n# Show the plot\nplt.show()\n\n\n\n\n\n\n\nFigure 1: Example plot created with Matplotlib."
+  },
+  {
+    "objectID": "quartomarkdown.html#クロスリファレンスと引用",
+    "href": "quartomarkdown.html#クロスリファレンスと引用",
+    "title": "Quarto Markdown の利点",
+    "section": "クロスリファレンスと引用",
+    "text": "クロスリファレンスと引用\nQuarto Markdown で何よりもまず お伝えしたいのは「クロスリファレンス」です。\nこの.qmdファイルでは、以下のことを行っています：\n実行可能なコードブロック で述べたようにうんぬんかんぬん。\nFigure 1 で示したようにうんぬんかんぬん。\nクロスリファレンス: 文書内のセクション（実行可能なコードブロック）と図（An example plot.）にラベルを付け、そのラベルを使用して文書内で参照しています。セクションへのリンクはマークダウンのリンク構文を使い、図へのリンクは @label を使用しています。 引用: (Smith and Doe 2020)を使用して、references.bibファイル内のBibTeXエントリを引用しています。"
+  },
+  {
+    "objectID": "quartomarkdown.html#sec-executable-codeblock",
+    "href": "quartomarkdown.html#sec-executable-codeblock",
+    "title": "Quarto Markdown の利点",
+    "section": "実行可能なコードブロック",
+    "text": "実行可能なコードブロック\n\n\n\nimport matplotlib.pyplot as plt\nimport numpy as np\n\nx = np.linspace(0, 10, 100)\ny = np.sin(x)\n\nplt.figure(figsize=(8, 4))\nplt.plot(x, y)\nplt.title(\"Example Plot\")\nplt.show()\n\n\nFigure 1"
+  },
+  {
+    "objectID": "try_quarto.html",
+    "href": "try_quarto.html",
+    "title": "Mysite",
+    "section": "",
+    "text": "import matplotlib.pyplot as plt\nimport numpy as np\n\nx = np.linspace(0, 10, 100)\ny = np.sin(x)\n\nplt.figure(figsize=(8, 4))\nplt.plot(x, y)\nplt.title(\"Example Plot\")\nplt.show()"
+  },
+  {
+    "objectID": "crossref.html",
+    "href": "crossref.html",
+    "title": "クロスリファレンス",
+    "section": "",
+    "text": "Quarto はデフォルトで、 Markdown による記述をサポートしています。\nQuarto はそれに加えて、 Quarto Markdown という独自の拡張を提供しています。\nQuarto Markdown には、以下のような利点があります。\nここでは「クロスリファレンスと引用」の機能を紹介します。"
+  },
+  {
+    "objectID": "crossref.html#クロスリファレンスと引用",
+    "href": "crossref.html#クロスリファレンスと引用",
+    "title": "クロスリファレンス",
+    "section": "クロスリファレンスと引用",
+    "text": "クロスリファレンスと引用\nクロスリファレンスを用いるには複数の Quarto Markdown の記法があるのですが、 ここではバージョン1.4から加わった下記の記法を用います。\n::: {#fig-elephant}\n\n![](elephant.png)\n\nAn Elephant\n:::\n上記の記法により下記の画像がウェブサイトには表示されます。\n(画像ファイル https://quarto.org/docs/authoring/elephant.png の取得が必要です。)\n\n\n\n\n\n\nFigure 1: 象さん\n\n\n\nまず、象の画像がウェブサイトに表示されているだけでなく、 閉じの ::: の 1行上にある文字「象さん」で図のキャプションが表示されることがわかります。\n次に\n@fig-elephant をご参照ください。\nと qmd 中に書いてみます。\nするとウェブサイトでは\nFigure 1 をご参照ください。\nと表示されます。 図のインデックス番号付けと、図へのリンクが自動的に生成されたことがわかります。 そして、これが「クロスリファレンス」と呼ばれるものになります。\n出版物では、図表に対する参照が多くなります。 その参照の管理を手作業で行うのは骨の折れる作業です。 この「クロスリファレンス」機能を使うとその苦労から逃れることができます。\n「クロスリファレンス」イコール「文書内のセクションや図や表にラベルを付け、そのラベルを使用して文書内で参照すること」と言えます。\n先程の\n::: {#fig-elephant}\n\n![](elephant.png)\n\nAn Elephant\n:::\nでは\n::: {#fig-elephant}\nによって、![](elephant.png) への「ラベル付け」が行われ、\n@fig-elephant\nによって「文書内で参照すること」が行われたのです。"
+  },
+  {
+    "objectID": "index.html#次は何を",
+    "href": "index.html#次は何を",
+    "title": "Quarto 超入門",
+    "section": "次は何を？",
+    "text": "次は何を？\nquarto preview mysite コマンドの実行後に _site というフォルダが作られ、そこにビルドされたウェブサイトのファイル があることがわかります。\nなおこの出力フォルダ名を変更したい場合は _quarto.yml の project: 項目下で output-dir: を指定します。 下記の場合は _site ではなく docs にビルド結果が出力されます。\nproject:\n  type: website\n  output-dir: docs\n次は、この _site を GitHub Pages に配置し、 ローカルにビルドされたウェブサイトをだれもが見れるようにします。\nGitHub Pages でのサイトのホスト へと進みましょう。"
+  },
+  {
+    "objectID": "crossref.html#クロスリファレンスと",
+    "href": "crossref.html#クロスリファレンスと",
+    "title": "クロスリファレンス",
+    "section": "クロスリファレンスと",
+    "text": "クロスリファレンスと\nクロスリファレンスを用いるには複数の Quarto Markdown の記法があるのですが、 ここではバージョン1.4から加わった下記の記法を用います。\n::: {#fig-elephant}\n\n![](elephant.png)\n\nAn Elephant\n:::\n上記の記法により下記の画像がウェブサイトには表示されます。\n(画像ファイル https://quarto.org/docs/authoring/elephant.png の取得が必要です。)\n\n\n\n\n\n\nFigure 1: 象さん\n\n\n\nまず、象の画像がウェブサイトに表示されているだけでなく、 閉じの ::: の 1行上にある文字「象さん」で図のキャプションが表示されることがわかります。\n次に\n@fig-elephant をご参照ください。\nと qmd 中に書いてみます。\nするとウェブサイトでは\nFigure 1 をご参照ください。\nと表示されます。 図のインデックス番号付けと、図へのリンクが自動的に生成されたことがわかります。 そして、これが「クロスリファレンス」と呼ばれるものになります。\n出版物では、図表に対する参照が多くなります。 その参照の管理を手作業で行うのは骨の折れる作業です。 この「クロスリファレンス」機能を使うとその苦労から逃れることができます。\n「クロスリファレンス」イコール「文書内のセクションや図や表にラベルを付け、そのラベルを使用して文書内で参照すること」と言えます。\n先程の\n::: {#fig-elephant}\n\n![](elephant.png)\n\nAn Elephant\n:::\nでは\n::: {#fig-elephant}\nによって、![](elephant.png) への「ラベル付け」が行われ、\n@fig-elephant\nによって「文書内で参照すること」が行われたのです。"
+  },
+  {
+    "objectID": "crossref.html#クロスリファレンスとその",
+    "href": "crossref.html#クロスリファレンスとその",
+    "title": "クロスリファレンス",
+    "section": "クロスリファレンスとその",
+    "text": "クロスリファレンスとその\nクロスリファレンスを用いるには複数の Quarto Markdown の記法があるのですが、 ここではバージョン1.4から加わった下記の記法を用います。\n::: {#fig-elephant}\n\n![](elephant.png)\n\nAn Elephant\n:::\n上記の記法により下記の画像がウェブサイトには表示されます。\n(画像ファイル https://quarto.org/docs/authoring/elephant.png の取得が必要です。)\n\n\n\n\n\n\nFigure 1: 象さん\n\n\n\nまず、象の画像がウェブサイトに表示されているだけでなく、 閉じの ::: の 1行上にある文字「象さん」で図のキャプションが表示されることがわかります。\n次に\n@fig-elephant をご参照ください。\nと qmd 中に書いてみます。\nするとウェブサイトでは\nFigure 1 をご参照ください。\nと表示されます。 図のインデックス番号付けと、図へのリンクが自動的に生成されたことがわかります。 そして、これが「クロスリファレンス」と呼ばれるものになります。\n出版物では、図表に対する参照が多くなります。 その参照の管理を手作業で行うのは骨の折れる作業です。 この「クロスリファレンス」機能を使うとその苦労から逃れることができます。\n「クロスリファレンス」イコール「文書内のセクションや図や表にラベルを付け、そのラベルを使用して文書内で参照すること」と言えます。\n先程の\n::: {#fig-elephant}\n\n![](elephant.png)\n\nAn Elephant\n:::\nでは\n::: {#fig-elephant}\nによって、![](elephant.png) への「ラベル付け」が行われ、\n@fig-elephant\nによって「文書内で参照すること」が行われたのです。"
+  },
+  {
+    "objectID": "crossref.html#クロスリファレンスとその使",
+    "href": "crossref.html#クロスリファレンスとその使",
+    "title": "クロスリファレンス",
+    "section": "クロスリファレンスとその使",
+    "text": "クロスリファレンスとその使\nクロスリファレンスを用いるには複数の Quarto Markdown の記法があるのですが、 ここではバージョン1.4から加わった下記の記法を用います。\n::: {#fig-elephant}\n\n![](elephant.png)\n\nAn Elephant\n:::\n上記の記法により下記の画像がウェブサイトには表示されます。\n(画像ファイル https://quarto.org/docs/authoring/elephant.png の取得が必要です。)\n\n\n\n\n\n\nFigure 1: 象さん\n\n\n\nまず、象の画像がウェブサイトに表示されているだけでなく、 閉じの ::: の 1行上にある文字「象さん」で図のキャプションが表示されることがわかります。\n次に\n@fig-elephant をご参照ください。\nと qmd 中に書いてみます。\nするとウェブサイトでは\nFigure 1 をご参照ください。\nと表示されます。 図のインデックス番号付けと、図へのリンクが自動的に生成されたことがわかります。 そして、これが「クロスリファレンス」と呼ばれるものになります。\n出版物では、図表に対する参照が多くなります。 その参照の管理を手作業で行うのは骨の折れる作業です。 この「クロスリファレンス」機能を使うとその苦労から逃れることができます。\n「クロスリファレンス」イコール「文書内のセクションや図や表にラベルを付け、そのラベルを使用して文書内で参照すること」と言えます。\n先程の\n::: {#fig-elephant}\n\n![](elephant.png)\n\nAn Elephant\n:::\nでは\n::: {#fig-elephant}\nによって、![](elephant.png) への「ラベル付け」が行われ、\n@fig-elephant\nによって「文書内で参照すること」が行われたのです。"
+  },
+  {
+    "objectID": "crossref.html#クロスリファレンスとは-その使い方",
+    "href": "crossref.html#クロスリファレンスとは-その使い方",
+    "title": "クロスリファレンス",
+    "section": "クロスリファレンスとは? + その使い方",
+    "text": "クロスリファレンスとは? + その使い方\nクロスリファレンスを用いるには複数の Quarto Markdown の記法があるのですが、 ここではバージョン1.4から加わった下記の記法を用います。\n::: {#fig-elephant}\n\n![](elephant.png)\n\n象さん\n:::\n上記の記法により下記の画像がウェブサイトには表示されます。\n(画像ファイル https://quarto.org/docs/authoring/elephant.png の取得が必要です。)\n\n\n\n\n\n\nFigure 1: 象さん\n\n\n\nまず、象の画像がウェブサイトに表示されているだけでなく、 閉じの ::: の 1行上にある文字「象さん」で図のキャプションが表示されることがわかります。\n次に\n@fig-elephant をご参照ください。\nと qmd 中に書いてみます。\nするとウェブサイトでは\nFigure 1 をご参照ください。\nと表示されます。 図のインデックス番号付けと、図へのリンクが自動的に生成されたことがわかります。 そして、これが「クロスリファレンス」と呼ばれるものになります。\n出版物では、図表に対する参照が多くなります。 その参照の管理を手作業で行うのは骨の折れる作業です。 この「クロスリファレンス」機能を使うとその苦労から逃れることができます。\n「クロスリファレンス」イコール「文書内のセクションや図や表にラベルを付け、そのラベルを使用して文書内で参照すること」と言えます。\n先程の\n::: {#fig-elephant}\n\n![](elephant.png)\n\nAn Elephant\n:::\nでは\n::: {#fig-elephant}\nによって、![](elephant.png) への「ラベル付け」が行われ、\n@fig-elephant\nによって「文書内で参照すること」が行われたのです。"
   }
 ]

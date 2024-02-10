@@ -5,3 +5,67 @@ title: "GitHub Pages でのサイトのホスト"
 ビルドしたサイトを GitHub Pages でホストするには、
 ビルドしたサイトを GitHub のリポジトリにプッシュする必要があります。
 またプッシュしたファイルをホストするための設定を GitHub で行う必要があります。
+
+何はともあれ、
+<https://desktop.github.com/>
+を使う等して、
+[Quarto 超入門](index.html) で作った `mysite` フォルダ下のファイルを
+ご自身の GitHub のリポジトリに追加しましょう。
+
+それを追加した後は、下記の画像のように、そのリポジトリの設定を変更しましょう。
+
+![](settings4pages.png)
+
+すると下記のファイルを自動生成する旨のメッセージが表示されます。
+行がたくさんありますが、困惑する必要はありません。
+
+注意すべきは `path: 'docs'`の行だけです。
+この行を Quarto がビルド結果を出力したフォルダ名 `_site` に
+変更する、つまり `path: '_site'` に変更すれば、
+GitHub Pages へのウェブサイトの配置が完了します。
+
+```
+# Simple workflow for deploying static content to GitHub Pages
+name: Deploy static content to Pages
+
+on:
+  # Runs on pushes targeting the default branch
+  push:
+    branches: ["main"]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
+# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  # Single deploy job since we're just deploying
+  deployn:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          # Upload `docs` repository
+          path: 'docs'
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+```

@@ -8,8 +8,8 @@ website:
     left:
       - href: index.qmd
         text: Home
-      - quartomarkdown.qmd
       - githubpages.qmd
+      - crossref.qmd
 
 format:
   html:

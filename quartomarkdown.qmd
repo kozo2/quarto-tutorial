@@ -1,9 +1,0 @@
----
-title: "Quarto Markdown による記述"
----
-
-Quarto はデフォルトで、 Markdown による記述をサポートしています。
-
-Quarto はそれに加えて、 Quarto Markdown という独自の拡張を提供しています。
-
-Quarto Markdown には、以下のような特徴があります。
